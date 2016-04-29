@@ -12,7 +12,6 @@
 
 @interface GQAnimConfigure : NSObject
 
-
 /**
  *  无限自动旋转的太阳光晕
  *

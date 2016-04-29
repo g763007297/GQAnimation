@@ -12,17 +12,15 @@
 
 #import <objc/runtime.h>
 
-static const NSString *animationType = @"animationType";
+NSString * const KAnimationType = @"__GAnimation__Type";
 
-static NSString *thunderAnimKey = @"thunder";
+static NSString *thunderAnimKey = @"__GThunder__Key";
 
-static NSString *starAnimKey = @"star";
+static NSString *starAnimKey = @"__GStar__Key";
 
 @interface GQAnimation()
 
 @property (nonatomic, strong) UIView *animationView;
-
-@property (nonatomic, assign) GQAnimationType animationType;
 
 @property (nonatomic, assign) CGRect rectFrame;
 
@@ -33,7 +31,7 @@ static NSString *starAnimKey = @"star";
 - (id)initWithFrame:(CGRect)frame withAnimationType:(GQAnimationType)type withSuperView:(UIView *)superView{
     self = [super init];
     if (self) {
-        _animationType = type;
+        [self setAnimationType:type];
         _rectFrame = frame;
         _animationView.backgroundColor = [UIColor clearColor];
         _animationView = [[UIView alloc] initWithFrame:frame];
@@ -44,6 +42,20 @@ static NSString *starAnimKey = @"star";
     return self;
 }
 
+//获取动画类型
+- (GQAnimationType)animationType
+{
+    return [objc_getAssociatedObject(self, &KAnimationType) intValue];
+}
+
+//设置动画类型
+- (void)setAnimationType:(GQAnimationType)animationType
+{
+    [self willChangeValueForKey:KAnimationType];
+    objc_setAssociatedObject(self, &KAnimationType, @(animationType), OBJC_ASSOCIATION_ASSIGN);
+    [self didChangeValueForKey:KAnimationType];
+}
+
 - (void)setAnimationWithFrame:(CGRect)frame{
 //    CGFloat MAXSize = MAX(CGRectGetWidth(frame), CGRectGetHeight(frame));
     CGFloat MIXSize = MIN(CGRectGetWidth(frame), CGRectGetHeight(frame));
@@ -51,7 +63,7 @@ static NSString *starAnimKey = @"star";
     [_animationView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     [_animationView.layer.sublayers makeObjectsPerformSelector:@selector(removeFromSuperlayer)];
     
-    switch (_animationType) {
+    switch ([self animationType]) {
         //多云效果
         case GQAnimationCloud:{
             do{
@@ -192,7 +204,7 @@ static NSString *starAnimKey = @"star";
 
 //重置动画
 - (void)resetType:(GQAnimationType)type{
-    _animationType = type;
+    [self setAnimationType:type];
     [self setAnimationWithFrame:_rectFrame];
 }
 
