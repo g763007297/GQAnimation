@@ -66,7 +66,6 @@
 		B62C62771CD324E90074ECC6 /* GQAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GQAnimation.m; sourceTree = "<group>"; };
 		B62C62781CD324E90074ECC6 /* GQAnimConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GQAnimConfigure.h; sourceTree = "<group>"; };
 		B62C62791CD324E90074ECC6 /* GQAnimConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GQAnimConfigure.m; sourceTree = "<group>"; };
-		B62C627A1CD324E90074ECC6 /* GQGlobalDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GQGlobalDefine.h; sourceTree = "<group>"; };
 		B62C62901CD325510074ECC6 /* bg_cloud_night@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_cloud_night@2x.png"; sourceTree = "<group>"; };
 		B62C629F1CD326960074ECC6 /* DemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
 		B62C62A01CD326960074ECC6 /* DemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
@@ -142,7 +141,6 @@
 				B62C62771CD324E90074ECC6 /* GQAnimation.m */,
 				B62C62781CD324E90074ECC6 /* GQAnimConfigure.h */,
 				B62C62791CD324E90074ECC6 /* GQAnimConfigure.m */,
-				B62C627A1CD324E90074ECC6 /* GQGlobalDefine.h */,
 			);
 			path = GQAnimation;
 			sourceTree = SOURCE_ROOT;
@@ -418,6 +416,7 @@
 				B62C62631CD324CF0074ECC6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

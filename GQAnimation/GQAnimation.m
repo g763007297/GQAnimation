@@ -45,14 +45,14 @@ static NSString *starAnimKey = @"star";
 }
 
 - (void)setAnimationWithFrame:(CGRect)frame{
-    CGFloat MAXSize = MAX(CGRectGetWidth(frame), CGRectGetHeight(frame));
+//    CGFloat MAXSize = MAX(CGRectGetWidth(frame), CGRectGetHeight(frame));
     CGFloat MIXSize = MIN(CGRectGetWidth(frame), CGRectGetHeight(frame));
     
     [_animationView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     [_animationView.layer.sublayers makeObjectsPerformSelector:@selector(removeFromSuperlayer)];
     
     switch (_animationType) {
-            //多云效果
+        //多云效果
         case GQAnimationCloud:{
             do{
                 CAEmitterCell *yjjc_h_a2 = [GQAnimConfigure getCloudWithbirthRate:0.02f withcontentName:@"yjjc_h_a2" xAcceleration:0.5f];
@@ -72,7 +72,7 @@ static NSString *starAnimKey = @"star";
             }while(0);
             break;
         }
-            //晴天动画
+        //晴天动画
         case GQAnimationSun:{
             UIImageView *_sunshine1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sunshine1"]];
             _sunshine1.frame = CGRectMake(0, 0, MIXSize, MIXSize);
@@ -101,7 +101,7 @@ static NSString *starAnimKey = @"star";
             }while(0);
             break;
         }
-            //雷阵雨效果
+        //雷阵雨效果
         case GQAnimationThunder:{
             UIImageView *_thunder = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"lightning_1"]];
             _thunder.frame = CGRectMake(0, -50, MIXSize/4, MIXSize/4);
@@ -163,23 +163,23 @@ static NSString *starAnimKey = @"star";
         }
         //星星闪烁效果
         case GQAnimationStar:{
+            //随机生成多少个星星
             int number = arc4random() % (int)ceilf(MIN(CGRectGetWidth(frame), CGRectGetHeight(frame)));
             for (int i = 0; i < number; i++) {
-                
+                //星星生成的x点
                 int x = arc4random() % (int)ceilf(MIN(CGRectGetWidth(frame), CGRectGetHeight(frame)));
-                
+                //星星生成的y点
                 int y = arc4random() % (int)ceilf(MIN(CGRectGetWidth(frame), CGRectGetHeight(frame)));
                 
+                //初始化星星
                 UIImageView *_star = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"star3"]];
-                
                 _star.contentMode = UIViewContentModeScaleAspectFit;
-                
                 _star.frame = CGRectMake(x, y, 30, 30);
-                
                 [_star setTransform:CGAffineTransformMakeScale(15, 15)];
                 
-                CABasicAnimation *starAnimation = [GQAnimConfigure configureStarAnimation:[self randFloatBetween:0.5 and:1.5]];
-                
+                //生成星星闪烁动画
+                CABasicAnimation *starAnimation = [GQAnimConfigure configureStarAnimation:[GQAnimConfigure randFloatBetween:0.5 and:1.5]];
+                //添加动画到layer
                 [_star.layer addAnimation:starAnimation forKey:starAnimKey];
                 [_animationView addSubview:_star];
             }
@@ -190,13 +190,7 @@ static NSString *starAnimKey = @"star";
     }
 }
 
-
--(float) randFloatBetween:(float)low and:(float)high
-{
-    float diff = high - low;
-    return (((float) rand() / RAND_MAX) * diff) + low;
-}
-
+//重置动画
 - (void)resetType:(GQAnimationType)type{
     _animationType = type;
     [self setAnimationWithFrame:_rectFrame];

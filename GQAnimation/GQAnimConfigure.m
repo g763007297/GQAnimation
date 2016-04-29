@@ -91,4 +91,11 @@
     return [self birthRate:birthRate withLifetime:120.0f withVelocity:0.0f withcontentName:contentName xAcceleration:0 yAcceleration:yAcceleration];
 }
 
+//随机生成制定区间的浮点数
++(float)randFloatBetween:(float)low and:(float)high
+{
+    float diff = high - low;
+    return (((float) rand() / RAND_MAX) * diff) + low;
+}
+
 @end

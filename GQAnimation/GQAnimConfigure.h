@@ -108,4 +108,15 @@
 
 + (CAEmitterCell *)getRainWithbirthRate:(float)birthRate withcontentName:(NSString *)contentName yAcceleration:(float)yAcceleration;
 
+/**
+ *  随机生成制定区间的浮点数
+ *
+ *  @param low  区间低位
+ *  @param high 区间高位
+ *
+ *  @return 浮点数
+ */
++(float)randFloatBetween:(float)low and:(float)high;
+
+
 @end
