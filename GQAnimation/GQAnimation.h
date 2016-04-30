@@ -14,7 +14,8 @@ typedef enum {
     GQAnimationRain,        //雨天
     GQAnimationCloud,       //多云
     GQAnimationThunder,     //雷阵雨
-    GQAnimationStar         //星星闪动
+    GQAnimationStar,        //星星闪动
+    GQAnimationScan         //二维码扫描动画
 }GQAnimationType;
 
 typedef enum {
@@ -24,6 +25,9 @@ typedef enum {
 }GQAnimationGravity;
 
 @interface GQAnimation : NSObject
+
+@property (nonatomic, readonly) BOOL isAnimation;
+
 /**
  *  初始化动画
  *
@@ -41,5 +45,15 @@ typedef enum {
  *  @param type GQAnimationType
  */
 - (void)resetType:(GQAnimationType)type;
+
+/**
+ *  暂停动画
+ */
+- (void)pauseAnimation;
+
+/**
+ *  恢复动画
+ */
+- (void)resumeAnimation;
 
 @end

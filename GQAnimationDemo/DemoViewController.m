@@ -22,12 +22,19 @@
     [super viewDidLoad];
     self.title = _navTitle;
     self.view.layer.contents = (id)[UIImage imageNamed:@"bg_cloud_night"].CGImage;
-    UIButton *btnRight = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 48.0f, 48.0f)];
-    [btnRight setTitle:@"刷新" forState:UIControlStateNormal];
-    [btnRight setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    [btnRight addTarget:self action:@selector(change:) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *itemRight = [[UIBarButtonItem alloc] initWithCustomView:btnRight];
-    self.navigationController.visibleViewController.navigationItem.rightBarButtonItem = itemRight;
+    UIButton *refreashButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 48.0f, 48.0f)];
+    [refreashButton setTitle:@"刷新" forState:UIControlStateNormal];
+    [refreashButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [refreashButton addTarget:self action:@selector(change:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *itemRefreash = [[UIBarButtonItem alloc] initWithCustomView:refreashButton];
+    
+    UIButton *pauseAndResumeButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 48.0f, 48.0f)];
+    [pauseAndResumeButton setTitle:@"暂停" forState:UIControlStateNormal];
+    [pauseAndResumeButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [pauseAndResumeButton addTarget:self action:@selector(pauseAndResume:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *pauseAndResume = [[UIBarButtonItem alloc] initWithCustomView:pauseAndResumeButton];
+    
+    self.navigationController.visibleViewController.navigationItem.rightBarButtonItems = @[itemRefreash,pauseAndResume];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -37,6 +44,17 @@
 
 - (void)change:(id)sender{
     [_animationView resetType:GQAnimationStar];
+}
+
+- (void)pauseAndResume:(id)sender{
+    UIButton *button = (UIButton *)sender;
+    if (_animationView.isAnimation) {
+        [button setTitle:@"暂停" forState:UIControlStateNormal];
+        [_animationView pauseAnimation];
+    }else{
+        [button setTitle:@"恢复" forState:UIControlStateNormal];
+        [_animationView resumeAnimation];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

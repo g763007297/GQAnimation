@@ -8,7 +8,11 @@
 
 #import "GQAnimation.h"
 #import "GQAnimConfigure.h"
+
+#import "GQScaningView.h"
 #import <QuartzCore/QuartzCore.h>
+#import "CALayer+Addtion.h"
+#import "UIView+Addition.h"
 
 #import <objc/runtime.h>
 
@@ -23,6 +27,8 @@ static NSString *starAnimKey = @"__GStar__Key";
 @property (nonatomic, strong) UIView *animationView;
 
 @property (nonatomic, assign) CGRect rectFrame;
+
+@property (nonatomic, strong) GQScaningView *scaningView;
 
 @end
 
@@ -57,6 +63,7 @@ static NSString *starAnimKey = @"__GStar__Key";
 }
 
 - (void)setAnimationWithFrame:(CGRect)frame{
+    _isAnimation = YES;
 //    CGFloat MAXSize = MAX(CGRectGetWidth(frame), CGRectGetHeight(frame));
     CGFloat MIXSize = MIN(CGRectGetWidth(frame), CGRectGetHeight(frame));
     
@@ -197,6 +204,19 @@ static NSString *starAnimKey = @"__GStar__Key";
             }
             break;
         }
+        case GQAnimationScan:{
+            _scaningView = [[GQScaningView alloc] initWithFrame:frame];
+            _scaningView.backgroundColor = [UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:0.3];
+            _scaningView.duration = 1.5f;
+            _scaningView.repeatCount = 10;
+            _scaningView.layer.cornerRadius = 2.0f;
+            _scaningView.layer.masksToBounds = YES;
+            _scaningView.layer.borderWidth = 1.0;
+            _scaningView.layer.borderColor = [[UIColor whiteColor] CGColor];
+            [_animationView addSubview:_scaningView];
+            [_scaningView startScanning];
+            break;
+        }
         default:
             break;
     }
@@ -206,6 +226,24 @@ static NSString *starAnimKey = @"__GStar__Key";
 - (void)resetType:(GQAnimationType)type{
     [self setAnimationType:type];
     [self setAnimationWithFrame:_rectFrame];
+}
+
+//暂停动画
+- (void)pauseAnimation{
+    _isAnimation = NO;
+    if (_scaningView) {
+        [_scaningView stopScanning];
+    }
+    [_animationView pauseSubLayersAnimation:YES];
+}
+
+//恢复动画
+- (void)resumeAnimation{
+    _isAnimation = YES;
+    if (_scaningView) {
+        [_scaningView startScanning];
+    }
+    [_animationView pauseSubLayersAnimation:NO];
 }
 
 @end
