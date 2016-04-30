@@ -1,5 +1,5 @@
 # GQAnimation
-几种常见的天气动画，如晴天，雨天，多云，雷阵雨等.
+几种常见的天气动画，如晴天，雨天，多云，雷阵雨，星星闪动，扫描等.
 
 一句话将动画添加到你的界面:
     - (id)initWithFrame:(CGRect)frame withAnimationType:(GQAnimationType)type withSuperView:(UIView *)superView;
