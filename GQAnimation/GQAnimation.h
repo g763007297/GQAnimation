@@ -15,7 +15,8 @@ typedef enum {
     GQAnimationCloud,       //多云
     GQAnimationThunder,     //雷阵雨
     GQAnimationStar,        //星星闪动
-    GQAnimationScan         //二维码扫描动画
+    GQAnimationScan,        //二维码扫描动画
+    GQAnimationPulseHalo    //
 }GQAnimationType;
 
 typedef enum {

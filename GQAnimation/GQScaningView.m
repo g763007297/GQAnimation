@@ -184,9 +184,9 @@ static UIColor *rgb_color(unsigned rgb)
 
 - (void)stopScanning
 {
-    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(scanningDidStop) object:nil];
-    _focusBar.hidden=YES;
-    [_focusBar.layer removeAllAnimations];
+//    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(scanningDidStop) object:nil];
+//    _focusBar.hidden=YES;
+//    [_focusBar.layer removeAllAnimations];
     _isScanning=NO;
 }
 

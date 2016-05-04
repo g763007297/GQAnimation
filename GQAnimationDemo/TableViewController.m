@@ -23,7 +23,7 @@
     self.tableView.layer.contents = (id)[UIImage imageNamed:@"bg_cloud_night"].CGImage;
     self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    array = @[@"晴天",@"雨天",@"多云",@"雷阵雨",@"星星",@"二维码扫描动画"];
+    array = @[@"晴天",@"雨天",@"多云",@"雷阵雨",@"星星",@"二维码扫描动画",@"脉冲动画"];
     [self.tableView reloadData];
 }
 

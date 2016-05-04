@@ -36,6 +36,8 @@
 		B62C62AC1CD341F60074ECC6 /* lightning_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B62C62A91CD341F60074ECC6 /* lightning_1@2x.png */; };
 		B62C62AD1CD341F60074ECC6 /* lightning_01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B62C62AA1CD341F60074ECC6 /* lightning_01@2x.png */; };
 		B62C62AE1CD341F60074ECC6 /* lightning_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B62C62AB1CD341F60074ECC6 /* lightning_2@2x.png */; };
+		DF1774B91CDA2FB300043A83 /* GQPulseHaloView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1774B81CDA2FB300043A83 /* GQPulseHaloView.m */; };
+		DF1774BC1CDA2FCF00043A83 /* GQPulseHaloLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1774BB1CDA2FCF00043A83 /* GQPulseHaloLayer.m */; };
 		DF40A0301CD433100022D69E /* GQScaningView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF40A02F1CD433100022D69E /* GQScaningView.m */; };
 		DF40A0371CD438DD0022D69E /* CALayer+Addtion.m in Sources */ = {isa = PBXBuildFile; fileRef = DF40A0361CD438DD0022D69E /* CALayer+Addtion.m */; };
 		DF40A03A1CD43BE40022D69E /* UIView+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = DF40A0391CD43BE40022D69E /* UIView+Addition.m */; };
@@ -78,6 +80,10 @@
 		B62C62A91CD341F60074ECC6 /* lightning_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lightning_1@2x.png"; sourceTree = "<group>"; };
 		B62C62AA1CD341F60074ECC6 /* lightning_01@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lightning_01@2x.png"; sourceTree = "<group>"; };
 		B62C62AB1CD341F60074ECC6 /* lightning_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lightning_2@2x.png"; sourceTree = "<group>"; };
+		DF1774B71CDA2FB300043A83 /* GQPulseHaloView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GQPulseHaloView.h; sourceTree = "<group>"; };
+		DF1774B81CDA2FB300043A83 /* GQPulseHaloView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GQPulseHaloView.m; sourceTree = "<group>"; };
+		DF1774BA1CDA2FCF00043A83 /* GQPulseHaloLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GQPulseHaloLayer.h; sourceTree = "<group>"; };
+		DF1774BB1CDA2FCF00043A83 /* GQPulseHaloLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GQPulseHaloLayer.m; sourceTree = "<group>"; };
 		DF40A02E1CD433100022D69E /* GQScaningView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GQScaningView.h; sourceTree = "<group>"; };
 		DF40A02F1CD433100022D69E /* GQScaningView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GQScaningView.m; sourceTree = "<group>"; };
 		DF40A0351CD438DD0022D69E /* CALayer+Addtion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Addtion.h"; sourceTree = "<group>"; };
@@ -145,6 +151,7 @@
 		B62C62641CD324E90074ECC6 /* GQAnimation */ = {
 			isa = PBXGroup;
 			children = (
+				DF1774B61CDA2FB300043A83 /* GQPulseHalo */,
 				DF40A0341CD438DD0022D69E /* Addtion */,
 				B62C62651CD324E90074ECC6 /* animation */,
 				B62C62761CD324E90074ECC6 /* GQAnimation.h */,
@@ -189,6 +196,17 @@
 				B62C62901CD325510074ECC6 /* bg_cloud_night@2x.png */,
 			);
 			path = BgImage;
+			sourceTree = "<group>";
+		};
+		DF1774B61CDA2FB300043A83 /* GQPulseHalo */ = {
+			isa = PBXGroup;
+			children = (
+				DF1774B71CDA2FB300043A83 /* GQPulseHaloView.h */,
+				DF1774B81CDA2FB300043A83 /* GQPulseHaloView.m */,
+				DF1774BA1CDA2FCF00043A83 /* GQPulseHaloLayer.h */,
+				DF1774BB1CDA2FCF00043A83 /* GQPulseHaloLayer.m */,
+			);
+			path = GQPulseHalo;
 			sourceTree = "<group>";
 		};
 		DF40A0341CD438DD0022D69E /* Addtion */ = {
@@ -292,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B62C624F1CD324CF0074ECC6 /* AppDelegate.m in Sources */,
+				DF1774BC1CDA2FCF00043A83 /* GQPulseHaloLayer.m in Sources */,
 				DF40A0301CD433100022D69E /* GQScaningView.m in Sources */,
 				B62C62A71CD334130074ECC6 /* TableViewController.m in Sources */,
 				DF40A0371CD438DD0022D69E /* CALayer+Addtion.m in Sources */,
@@ -299,6 +318,7 @@
 				DF40A03A1CD43BE40022D69E /* UIView+Addition.m in Sources */,
 				B62C628B1CD324E90074ECC6 /* GQAnimation.m in Sources */,
 				B62C62A11CD326960074ECC6 /* DemoViewController.m in Sources */,
+				DF1774B91CDA2FB300043A83 /* GQPulseHaloView.m in Sources */,
 				B62C624C1CD324CF0074ECC6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

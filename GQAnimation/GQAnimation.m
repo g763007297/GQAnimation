@@ -9,6 +9,7 @@
 #import "GQAnimation.h"
 #import "GQAnimConfigure.h"
 
+#import "GQPulseHaloView.h"
 #import "GQScaningView.h"
 #import <QuartzCore/QuartzCore.h>
 #import "CALayer+Addtion.h"
@@ -29,6 +30,8 @@ static NSString *starAnimKey = @"__GStar__Key";
 @property (nonatomic, assign) CGRect rectFrame;
 
 @property (nonatomic, strong) GQScaningView *scaningView;
+
+@property (nonatomic, strong) GQPulseHaloView *pulseHaloView;
 
 @end
 
@@ -217,6 +220,15 @@ static NSString *starAnimKey = @"__GStar__Key";
             [_scaningView startScanning];
             break;
         }
+        //脉冲动画
+        case GQAnimationPulseHalo:{
+            CGPoint center = self.animationView.center;
+            _pulseHaloView = [[GQPulseHaloView alloc] initWithFrame:(CGRect){center,CGSizeMake(MIXSize, MIXSize)} withNumberPules:20];
+            _pulseHaloView.center = center;
+            [self.animationView addSubview:_pulseHaloView];
+            [_pulseHaloView startAnimation];
+            break;
+        }
         default:
             break;
     }
@@ -240,9 +252,9 @@ static NSString *starAnimKey = @"__GStar__Key";
 //恢复动画
 - (void)resumeAnimation{
     _isAnimation = YES;
-    if (_scaningView) {
-        [_scaningView startScanning];
-    }
+//    if (_scaningView) {
+//        [_scaningView startScanning];
+//    }
     [_animationView pauseSubLayersAnimation:NO];
 }
 
