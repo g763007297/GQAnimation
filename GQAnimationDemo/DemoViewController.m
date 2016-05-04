@@ -10,7 +10,9 @@
 
 #import "GQAnimation.h"
 
-@interface DemoViewController ()
+@interface DemoViewController (){
+    UIButton *pauseAndResumeButton;
+}
 
 @property (nonatomic ,strong) GQAnimation *animationView;
 
@@ -28,7 +30,7 @@
     [refreashButton addTarget:self action:@selector(change:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *itemRefreash = [[UIBarButtonItem alloc] initWithCustomView:refreashButton];
     
-    UIButton *pauseAndResumeButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 48.0f, 48.0f)];
+    pauseAndResumeButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 48.0f, 48.0f)];
     [pauseAndResumeButton setTitle:@"暂停" forState:UIControlStateNormal];
     [pauseAndResumeButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     [pauseAndResumeButton addTarget:self action:@selector(pauseAndResume:) forControlEvents:UIControlEventTouchUpInside];
@@ -44,15 +46,16 @@
 
 - (void)change:(id)sender{
     [_animationView resetType:GQAnimationStar];
+    [pauseAndResumeButton setTitle:@"暂停" forState:UIControlStateNormal];
 }
 
 - (void)pauseAndResume:(id)sender{
     UIButton *button = (UIButton *)sender;
     if (_animationView.isAnimation) {
-        [button setTitle:@"暂停" forState:UIControlStateNormal];
+        [button setTitle:@"恢复" forState:UIControlStateNormal];
         [_animationView pauseAnimation];
     }else{
-        [button setTitle:@"恢复" forState:UIControlStateNormal];
+        [button setTitle:@"暂停" forState:UIControlStateNormal];
         [_animationView resumeAnimation];
     }
 }

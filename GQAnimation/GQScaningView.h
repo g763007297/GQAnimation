@@ -19,5 +19,6 @@
 
 - (void)startScanning;
 - (void)stopScanning;
+- (void)pauseScanning;
 
 @end

@@ -207,6 +207,7 @@ static NSString *starAnimKey = @"__GStar__Key";
             }
             break;
         }
+        //二维码扫描动画
         case GQAnimationScan:{
             _scaningView = [[GQScaningView alloc] initWithFrame:frame];
             _scaningView.backgroundColor = [UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:0.3];
@@ -244,7 +245,7 @@ static NSString *starAnimKey = @"__GStar__Key";
 - (void)pauseAnimation{
     _isAnimation = NO;
     if (_scaningView) {
-        [_scaningView stopScanning];
+        [_scaningView pauseScanning];
     }
     [_animationView pauseSubLayersAnimation:YES];
 }
@@ -252,9 +253,6 @@ static NSString *starAnimKey = @"__GStar__Key";
 //恢复动画
 - (void)resumeAnimation{
     _isAnimation = YES;
-//    if (_scaningView) {
-//        [_scaningView startScanning];
-//    }
     [_animationView pauseSubLayersAnimation:NO];
 }
 
