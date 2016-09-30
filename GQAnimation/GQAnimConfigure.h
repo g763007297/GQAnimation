@@ -50,7 +50,7 @@
  *
  *  @return CABasicAnimation
  */
-+ (CABasicAnimation *)configureScaleAnimation:(CFTimeInterval)duration withRepeatCount:(int)repeatCount withTimeOffeset:(CFTimeInterval)timeOffset withAutoreverses:(BOOL)autoreverses withTimingFunction:(CAMediaTimingFunction*)timingFunction withRemovedOnCompletion:(BOOL)removedOnCompletion;
++ (CABasicAnimation *)configureScaleAnimation:(CFTimeInterval)duration withRepeatCount:(float)repeatCount withTimeOffeset:(CFTimeInterval)timeOffset withAutoreverses:(BOOL)autoreverses withTimingFunction:(CAMediaTimingFunction*)timingFunction withRemovedOnCompletion:(BOOL)removedOnCompletion;
 
 /**
  *  平移   掉落  加速动画效果

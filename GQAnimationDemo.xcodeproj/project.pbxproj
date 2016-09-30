@@ -251,6 +251,7 @@
 				TargetAttributes = {
 					B62C62461CD324CF0074ECC6 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = KT3C6DHFPC;
 					};
 				};
 			};
@@ -425,9 +426,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = KT3C6DHFPC;
 				INFOPLIST_FILE = GQAnimationDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Bossy.GQAnimationDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = Bossy.GQAnimationDemos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -436,9 +439,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = KT3C6DHFPC;
 				INFOPLIST_FILE = GQAnimationDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Bossy.GQAnimationDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = Bossy.GQAnimationDemos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

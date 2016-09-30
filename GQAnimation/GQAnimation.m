@@ -197,7 +197,6 @@ static NSString *starAnimKey = @"__GStar__Key";
                 UIImageView *_star = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"star3"]];
                 _star.contentMode = UIViewContentModeScaleAspectFit;
                 _star.frame = CGRectMake(x, y, 30, 30);
-                [_star setTransform:CGAffineTransformMakeScale(15, 15)];
                 
                 //生成星星闪烁动画
                 CABasicAnimation *starAnimation = [GQAnimConfigure configureStarAnimation:[GQAnimConfigure randFloatBetween:0.5 and:1.5]];

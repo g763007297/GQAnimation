@@ -31,7 +31,7 @@
 }
 
 //配置缩小放大效果
-+ (CABasicAnimation *)configureScaleAnimation:(CFTimeInterval)duration withRepeatCount:(int)repeatCount withTimeOffeset:(CFTimeInterval)timeOffset withAutoreverses:(BOOL)autoreverses withTimingFunction:(CAMediaTimingFunction*)timingFunction withRemovedOnCompletion:(BOOL)removedOnCompletion{
++ (CABasicAnimation *)configureScaleAnimation:(CFTimeInterval)duration withRepeatCount:(float)repeatCount withTimeOffeset:(CFTimeInterval)timeOffset withAutoreverses:(BOOL)autoreverses withTimingFunction:(CAMediaTimingFunction*)timingFunction withRemovedOnCompletion:(BOOL)removedOnCompletion{
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
     animation.fromValue = [NSNumber numberWithFloat:0];
     animation.toValue = [NSNumber numberWithFloat:1.0f];
