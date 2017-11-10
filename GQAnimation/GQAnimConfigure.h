@@ -50,7 +50,12 @@
  *
  *  @return CABasicAnimation
  */
-+ (CABasicAnimation *)configureScaleAnimation:(CFTimeInterval)duration withRepeatCount:(float)repeatCount withTimeOffeset:(CFTimeInterval)timeOffset withAutoreverses:(BOOL)autoreverses withTimingFunction:(CAMediaTimingFunction*)timingFunction withRemovedOnCompletion:(BOOL)removedOnCompletion;
++ (CABasicAnimation *)configureScaleAnimation:(CFTimeInterval)duration
+                              withRepeatCount:(float)repeatCount
+                              withTimeOffeset:(CFTimeInterval)timeOffset
+                             withAutoreverses:(BOOL)autoreverses
+                           withTimingFunction:(CAMediaTimingFunction*)timingFunction
+                      withRemovedOnCompletion:(BOOL)removedOnCompletion;
 
 /**
  *  平移   掉落  加速动画效果
@@ -64,7 +69,12 @@
  *
  *  @return CAEmitterCell
  */
-+ (CAEmitterCell *)birthRate:(float)birthRate withLifetime:(float)lifetime withVelocity:(float)velocity withcontentName:(NSString *)contentName xAcceleration:(float)xAcceleration yAcceleration:(float)yAcceleration;
++ (CAEmitterCell *)birthRate:(float)birthRate
+                withLifetime:(float)lifetime
+                withVelocity:(float)velocity
+             withcontentName:(NSString *)contentName
+               xAcceleration:(float)xAcceleration
+               yAcceleration:(float)yAcceleration;
 
 /**
  *  单个云飘动的动画效果
@@ -76,7 +86,9 @@
  *  @return CAEmitterCell
  */
 
-+ (CAEmitterCell *)getCloudWithbirthRate:(float)birthRate withcontentName:(NSString *)contentName xAcceleration:(float)xAcceleration;
++ (CAEmitterCell *)getCloudWithbirthRate:(float)birthRate
+                         withcontentName:(NSString *)contentName
+                           xAcceleration:(float)xAcceleration;
 
 /**
  *  配置多云飘动效果属性
@@ -93,7 +105,15 @@
  *
  *  @return CAEmitterLayer
  */
-+ (CAEmitterLayer *)configureLayerWithEmitterPosition:(CGPoint)emitterPosition withEmitterSize:(CGSize)emitterSize withEmitterMode:(NSString *)emitterMode withEmitterShape:(NSString *)emitterShape withShadowOpacity:(float)shadowOpacity withShadowRadius:(CGFloat)shadowRadius withShadowOffset:(CGSize)shadowOffset withShadowColor:(CGColorRef)shadowColor withEmitterCells:(NSArray *)emitterCells;
++ (CAEmitterLayer *)configureLayerWithEmitterPosition:(CGPoint)emitterPosition
+                                      withEmitterSize:(CGSize)emitterSize
+                                      withEmitterMode:(NSString *)emitterMode
+                                     withEmitterShape:(NSString *)emitterShape
+                                    withShadowOpacity:(float)shadowOpacity
+                                     withShadowRadius:(CGFloat)shadowRadius
+                                     withShadowOffset:(CGSize)shadowOffset
+                                      withShadowColor:(CGColorRef)shadowColor
+                                     withEmitterCells:(NSArray *)emitterCells;
 
 /**
  *  单个雨滴落的动画效果
@@ -105,7 +125,9 @@
  *  @return CAEmitterCell
  */
 
-+ (CAEmitterCell *)getRainWithbirthRate:(float)birthRate withcontentName:(NSString *)contentName yAcceleration:(float)yAcceleration;
++ (CAEmitterCell *)getRainWithbirthRate:(float)birthRate
+                        withcontentName:(NSString *)contentName
+                          yAcceleration:(float)yAcceleration;
 
 /**
  *  随机生成制定区间的浮点数

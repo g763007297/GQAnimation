@@ -16,7 +16,7 @@
     for (CALayer *subLayer in self.layer.sublayers) {
         pause?[subLayer pauseLayerAnimation]:[subLayer resumeLayerAnimation];
     }
-    if ([self.subviews count]==0) {
+    if ([self.subviews count] == 0) {
         return;
     }
     for (UIView *subView in self.subviews) {
